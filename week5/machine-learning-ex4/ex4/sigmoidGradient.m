@@ -15,7 +15,7 @@ g = zeros(size(z));
 
 
 
-
+g = arrayfun(@(x) e^x/(1+e^x)^2, z);
 
 
 
