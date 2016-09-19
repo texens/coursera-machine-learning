@@ -39,14 +39,11 @@ error_val = zeros(length(lambda_vec), 1);
 %
 %
 
-
-
-
-
-
-
-
-
+for i = 1:length(lambda_vec)
+  lambda = lambda_vec(i)
+  [theta] = trainLinearReg(X, y, lambda);
+  error_train(i) = (sum(arrayfun(@(x) x^2, X * theta - y)))/(2*size(X, 1));
+  error_val(i) = (sum(arrayfun(@(x) x^2, Xval * theta - yval)))/(2*size(Xval, 1));
 
 % =========================================================================
 
